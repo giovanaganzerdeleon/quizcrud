@@ -1,0 +1,23 @@
+[
+    {
+        "pergunta": "qual e certa?",
+        "opcoes": [
+            "3,2,1"
+        ],
+        "correta": 0
+    },
+    {
+        "pergunta": "teste de sorte",
+        "opcoes": [
+            "1,5,9"
+        ],
+        "correta": 2
+    },
+    {
+        "pergunta": "teste de sorte",
+        "opcoes": [
+            "1,5,9"
+        ],
+        "correta": 2
+    }
+]
