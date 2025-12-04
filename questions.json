@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "pergunta": "qual e certa?",
         "opcoes": [
             "3,2,1"
@@ -7,6 +8,7 @@
         "correta": 0
     },
     {
+        "id": 2,
         "pergunta": "teste de sorte",
         "opcoes": [
             "1,5,9"
@@ -14,10 +16,31 @@
         "correta": 2
     },
     {
+        "id": 3,
         "pergunta": "teste de sorte",
         "opcoes": [
             "1,5,9"
         ],
         "correta": 2
+    },
+    {
+        "id": 4,
+        "pergunta": "oq e um zangao?",
+        "opcoes": [
+            "uma abelha que n recebeu mel",
+            "um outro tipo de abelha",
+            "um besouro"
+        ],
+        "correta": 0
+    },
+    {
+        "id": 5,
+        "pergunta": "uma galinha pode virar galo?",
+        "opcoes": [
+            "sim",
+            "n",
+            "noa sei"
+        ],
+        "correta": 0
     }
 ]
