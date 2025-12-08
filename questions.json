@@ -1,46 +1,22 @@
 [
     {
         "id": 1,
-        "pergunta": "qual e certa?",
+        "pergunta": "qual e a capital do brazil?",
         "opcoes": [
-            "3,2,1"
+            "rio de janeiro",
+            "sao paulo",
+            "brasilia"
         ],
-        "correta": 0
+        "correta": 2
     },
     {
         "id": 2,
-        "pergunta": "teste de sorte",
+        "pergunta": "qual o pais mais perto do polo norte?",
         "opcoes": [
-            "1,5,9"
+            "russia",
+            "greenland",
+            "Canada"
         ],
         "correta": 2
-    },
-    {
-        "id": 3,
-        "pergunta": "teste de sorte",
-        "opcoes": [
-            "1,5,9"
-        ],
-        "correta": 2
-    },
-    {
-        "id": 4,
-        "pergunta": "oq e um zangao?",
-        "opcoes": [
-            "uma abelha que n recebeu mel",
-            "um outro tipo de abelha",
-            "um besouro"
-        ],
-        "correta": 0
-    },
-    {
-        "id": 5,
-        "pergunta": "uma galinha pode virar galo?",
-        "opcoes": [
-            "sim",
-            "n",
-            "noa sei"
-        ],
-        "correta": 0
     }
 ]

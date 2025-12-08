@@ -7,13 +7,45 @@ dados = "questions.json"
 
 
 
+    
+
+
+
+def delete_questions (dados,id_delete):
+    id_delete =int(id_delete)
+    for item in dados:
+        if int(item("id",0)) == id_delete:
+            dados.remove(item)
+            return True
+    return False
+            
+ 
+    
+
+
+
+    
+
+
+def changue_questions(indice,pergunta,new_question):
+    with open (dados,"w",encoding="UTF-8") as f:
+        indice= dados["id"]
+        for indice in dados:
+            pass
+
+
+
+
+
+#tudo abaixo funciona
+
+
+
 
 def save_questions(perguntas):
     with open(dados,"w",encoding="UTF-8") as f:
         json.dump(perguntas,f,ensure_ascii=False,indent=4) #--- testado e aprovado!
     
-
-
 
 
 def load_questions():
@@ -23,50 +55,28 @@ def load_questions():
                 return json.load(f)
         except json.JSONDecodeError:
             return [] #--testado e aprovado!
-    
 
-# def delete_questions(dados,indice):
-#         dados = load_questions()
-#         if 0 <= indice <len(dados):
-#             deletar = ["pergunta"[0],"opcoes"[1],"correta"[2]]
-#             for item in deletar:
-#                 del dados[deletar]
-#                 return True
-#         return False
-            
-    
-def id_pergunta(dados):
+
+def id_questions(dados):
     dados = load_questions()
     if not dados:
-        novo_id = 1
-    else:
-        ultimo_id = [item.get("id",0)for item in dados if isinstance(item,dict)]
-        novo_id = max(ultimo_id) +1
-   
+        return 1
+    return max(p.get(int("id",0))for p in dados) +1 #testado e aprovado!
 
 
-
-def mudar_perguntas(pergunta,indice,new_questions):
-    with open (dados,"w",encoding="UTF-8") as f:
-        if 0 <= indice <len(dados):
-            dados[indice].update(new_questions)
-            save_questions(pergunta)
-            save_questions( dados)
-            return True
-        return False # n testado
-
-
-def add_questions(id,pergunta,opcoes,correta):
+def add_questions(pergunta,opcoes,correta):
         perguntas =load_questions()
-        novo_id = id_pergunta(dados)
+        new_id = id_questions(pergunta)
+
         new_questions ={
-            "id" : novo_id,
+            "id" : new_id,
             "pergunta": pergunta,
             "opcoes" : opcoes,
             "correta" : correta
         }
         perguntas.append(new_questions)
-        save_questions(perguntas)# testado
+        save_questions(perguntas)# testado | passar as opcoes como lista (passar as respostas com o nome certo)
+        return new_id
 
 
 def mostrar():
@@ -75,8 +85,11 @@ def mostrar():
         print(perguntas) #---> ok, aparece!
 
 
-
-
 if __name__ == "__main__":
-    add_questions("oq e um zangao?",["uma abelha que n recebeu mel","um outro tipo de abelha","um besouro"],0)
-    mostrar()
+    #add_questions("qual o pais mais perto do polo norte?",["russia","greenland","Canada"],2)
+   perguntas = load_questions()
+   if delete_questions(perguntas,2):
+       save_questions()
+   else:
+       print("id n achado")
+       
