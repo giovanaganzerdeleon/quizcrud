@@ -3,41 +3,28 @@ import os
 
 dados = "questions.json"
 
+def delete_question(id_question):
+    perguntas = load_questions()
+
+    nova_lista = [p for p in perguntas if p["id"] != id_question]
+
+    if len(nova_lista) == len(perguntas):
+        return False 
+
+    save_questions(nova_lista)
+    return True
 
 
 
+def update_question(id_question, novos_campos: dict):
+    perguntas = load_questions()
 
-    
-
-
-
-def delete_questions (dados,id_delete):
-    id_delete =int(id_delete)
-    for item in dados:
-        if int(item("id",0)) == id_delete:
-            dados.remove(item)
+    for item in perguntas:
+        if item["id"] == id_question:
+            item.update(novos_campos)
+            save_questions(perguntas)
             return True
-    return False
-            
- 
-    
-
-
-
-    
-
-
-def changue_questions(indice,pergunta,new_question):
-    with open (dados,"w",encoding="UTF-8") as f:
-        indice= dados["id"]
-        for indice in dados:
-            pass
-
-
-
-
-
-#tudo abaixo funciona
+    return False   # passar como um dicionario (igual o arquivo json)
 
 
 
@@ -85,11 +72,6 @@ def mostrar():
         print(perguntas) #---> ok, aparece!
 
 
+
 if __name__ == "__main__":
-    #add_questions("qual o pais mais perto do polo norte?",["russia","greenland","Canada"],2)
-   perguntas = load_questions()
-   if delete_questions(perguntas,2):
-       save_questions()
-   else:
-       print("id n achado")
-       
+    update_question(1,{"pergunta":"teste de sorte","opcoes":["1","4","6"],"correta":2})
